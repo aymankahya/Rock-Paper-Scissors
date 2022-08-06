@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;600&display=swap');
+
+html{
+    height: 100%;
+}
+
+body{
+    background-color: #141414;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#container > h1 {
+
+    color: azure;
+    font-family: Cormorant SC;
+    font-size: 50px;
+    margin: 0;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+
+#second-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+#second-container > h1{
+    color: azure;
+    font-family: Cormorant SC;
+    font-size: 50px;
+    margin: 0;
+}
+
+#second-container > p{
+    color: azure;
+    font-family: Cormorant SC;
+    font-weight: 100;
+    font-size: 22px;
+    word-spacing: 4px;
+    margin: 0;
+}
+
+#enter{
+    color: rgb(198, 129, 129);
+    font-family: Cormorant SC;
+    font-weight: 700;
+    font-size: 20px;
+}
