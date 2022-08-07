@@ -15,7 +15,7 @@ body{
 
 
 #container > h1 {
-
+    
     color: azure;
     font-family: Cormorant SC;
     font-size: 50px;
@@ -26,8 +26,14 @@ body{
     display: flex;
     flex-direction: column;
     gap: 5px;
+    animation: fadeIn 5s;
     align-items: center;
 }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
 
 
 #second-container{
