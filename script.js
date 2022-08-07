@@ -1,7 +1,7 @@
 //Variables declaration scope
 var userWins = 0 , computerWins = 0 , currentRound = 1;
 const possibleChoices = ["rock","paper","scissors"];
-const welcome = "Welcome to a Game of Rock, Paper, Scissors\nPlease make your choice :)"
+const welcome = "Welcome to a Game of Rock, Paper, Scissors\nChoose your weapon !"
 console.log(welcome);
 //Function declaration scope
 
@@ -13,18 +13,20 @@ function initializeVar(){
 }
 
 function clearPage(){
-    document.querySelector("body").innerHTML = '';
+    document.querySelector("#container").innerHTML = '';
 }
 
 function welcomeMessage(){
     clearPage();
-    let parentNode = document.querySelector("body");
+
+    let parentNode = document.querySelector("#container");
     let childNode = document.createElement("p");
     childNode.setAttribute("style" , "text-align: center;\
                                     color: azure;\
                                     font-family: Cormorant SC;\
                                     font-weight: 100;\
-                                    font-size: 40px;");
+                                    font-size: 40px;\
+                                    animation: fadeIn 2s;");
     parentNode.appendChild(childNode);
     var textBuffer = '';
     welcome.split('').forEach(function(letter , i){
@@ -37,6 +39,9 @@ function welcomeMessage(){
 });
 }
 
+function generateChoices(){
+
+}
 
 
 // User choice making :
