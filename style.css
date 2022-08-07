@@ -4,6 +4,7 @@ html{
     height: 100%;
 }
 
+
 body{
     background-color: #141414;
     display: flex;
@@ -26,7 +27,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 5px;
-    animation: fadeIn 5s;
+    animation: fadeIn 3s;
     align-items: center;
 }
 
