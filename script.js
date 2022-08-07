@@ -1,9 +1,11 @@
 //Variables declaration scope
+
 var userWins = 0 , computerWins = 0 , currentRound = 1;
 const possibleChoices = ["rock","paper","scissors"];
 var parentNode = document.querySelector("#container");
 const welcome = "Welcome to a Game of Rock, Paper, Scissors\nChoose your weapon !"
 console.log(welcome);
+
 //Function declaration scope
 
 let getRandomChoice = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
@@ -71,9 +73,6 @@ function generateChoices(){
     parentNode.appendChild(choicesContainer);
 
 }
-
-
-// User choice making :
 
 
 
