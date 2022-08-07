@@ -1,33 +1,41 @@
-/*
-
-============================
-Rock Paper Scissors Project
-============================
-    
-    From the console, the user should choose make his choice (Rock, Paper or Scissors), then the console should show the result after three rounds.
-
-    Pseudocode :
-
-        - Prompt the user to input his choice, if the choice is wrong an error shall be displayed and the prompt window shall reappear again for the user
-        - Once the choice is made, the checking phase shall be performed to decide the outcome of the each round (three in total, the first to reach three wins, is declared the winner of the game)
-    
-        Key Points :
-            => The choice of the computer is decided randomly.
-            => The winning streak is tracked for each user.
-*/
-
+//Variables declaration scope
+var userWins = 0 , computerWins = 0 , currentRound = 1;
+const possibleChoices = ["rock","paper","scissors"];
+const welcome = "Welcome to a Game of Rock, Paper, Scissors\nPlease make your choice :)"
+console.log(welcome);
 //Function declaration scope
 
 let getRandomChoice = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-
-var userWins = 0 , computerWins = 0 , currentRound = 1;
 
 
 function initializeVar(){
      userWins = computerWins = currentRound = 1;
 }
 
-const possibleChoices = ["rock","paper","scissors"];
+function clearPage(){
+    document.querySelector("body").innerHTML = '';
+}
+
+function welcomeMessage(){
+    clearPage();
+    let parentNode = document.querySelector("body");
+    let childNode = document.createElement("p");
+    childNode.setAttribute("style" , "text-align: center;\
+                                    color: azure;\
+                                    font-family: Cormorant SC;\
+                                    font-weight: 100;\
+                                    font-size: 40px;");
+    parentNode.appendChild(childNode);
+    var textBuffer = '';
+    welcome.split('').forEach(function(letter , i){
+        setTimeout( () => {
+
+            textBuffer += letter;
+            childNode.innerText = textBuffer;
+        
+    } , i*70);
+});
+}
 
 
 
@@ -37,8 +45,12 @@ const possibleChoices = ["rock","paper","scissors"];
 
 document.addEventListener('keypress' , function(event){
     if (event.code == 'Enter'){
-        do{
 
+        welcomeMessage(); 
+
+        /* do{
+
+    
 
             do{
         
@@ -98,7 +110,7 @@ document.addEventListener('keypress' , function(event){
             initializeVar();
         }
     }else{
-        alert("You have to press ENTER to start the game !");
+        alert("You have to press ENTER to start the game !"); */
     };
 }
 );
