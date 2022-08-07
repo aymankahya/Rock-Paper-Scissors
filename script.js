@@ -1,8 +1,11 @@
 //Variables declaration scope
+
 var userWins = 0 , computerWins = 0 , currentRound = 1;
 const possibleChoices = ["rock","paper","scissors"];
+var parentNode = document.querySelector("#container");
 const welcome = "Welcome to a Game of Rock, Paper, Scissors\nChoose your weapon !"
 console.log(welcome);
+
 //Function declaration scope
 
 let getRandomChoice = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
@@ -19,7 +22,7 @@ function clearPage(){
 function welcomeMessage(){
     clearPage();
 
-    let parentNode = document.querySelector("#container");
+    
     let childNode = document.createElement("p");
     childNode.setAttribute("style" , "text-align: center;\
                                     color: azure;\
@@ -40,18 +43,44 @@ function welcomeMessage(){
 }
 
 function generateChoices(){
+    let choicesContainer = document.createElement("div");
+    choicesContainer.setAttribute("style" , "display: flex;\
+                                            gap: 70px;\
+                                            animation: fadeIn 2s;\
+                                            justidy-content: space-evenly;\
+                                            color: azure;\
+                                            font-family: Cormorant SC;\
+                                            font-size: 50px;");
+
+    let rock = document.createElement("input");
+    let paper =  document.createElement("input");
+    let scissors =  document.createElement("input");
+
+    rock.setAttribute("type" , "image");
+    rock.setAttribute("src" , "./images/rock.png");
+
+    paper.setAttribute("type" , "image");
+    paper.setAttribute("src" , "./images/paper.png");
+
+    scissors.setAttribute("type" , "image");
+    scissors.setAttribute("src" , "./images/scissors.png");
+
+
+    choicesContainer.appendChild(rock);
+    choicesContainer.appendChild(paper);
+    choicesContainer.appendChild(scissors);
+
+    parentNode.appendChild(choicesContainer);
 
 }
-
-
-// User choice making :
 
 
 
 document.addEventListener('keypress' , function(event){
     if (event.code == 'Enter'){
 
-        welcomeMessage(); 
+        welcomeMessage();
+        setTimeout(generateChoices , 5000);
 
         /* do{
 
@@ -117,7 +146,7 @@ document.addEventListener('keypress' , function(event){
     }else{
         alert("You have to press ENTER to start the game !"); */
     };
-}
+} , {once:true}
 );
  
 
